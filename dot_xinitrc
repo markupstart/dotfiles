@@ -1,0 +1,16 @@
+# Make sure this is before the 'exec' command or it won't be sourced.
+[ -f /etc/xprofile ] && . /etc/xprofile
+[ -f ~/.xprofile ] && . ~/.xprofile
+
+xrdb -merge ~/.Xresources
+lxpolkit &
+xrandr -s 5120x1440 &
+#pkexec virsh net-start default &
+feh --bg-scale /home/mark/Washington\ -\ Creative\ wallpaper\ -\ Topaz\ Clean\ 3\ version.jpg &
+xset -dpms
+xset off
+xset s noblank
+dunst &
+/home/mark/status2 &
+exec /home/mark/dwm-6.5/dwm
+
