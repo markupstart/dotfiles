@@ -1,0 +1,44 @@
+#!/bin/bash
+
+
+        
+        # for me to know the pid so that i can send signals 
+        echo "$$" > ~/.pidofbar
+        
+        sec=0
+        
+        update_memory () {
+        	memory="$(free -h | sed -n "2s/\([^ ]* *\)\{2\}\([^ ]*\).*/\2/p")"
+        } 
+
+      update_cpu () {
+        	cpu="$(uptime | sed "s/.*://" | cut -f1 -d,)"
+        }
+        
+        update_time () {
+        	time="$(date "+ %a %d %b  %l:%M%p")"
+        }
+        
+        display () {
+        	xsetroot -name "MEM: $memory  CPU: $cpu $time"
+        }
+        
+        
+        # signals for each module to update while updating display
+        trap "update_memory;display" 30
+        trap "update_cpu;display" 30
+        trap "update_time;display" 29
+        
+        while true
+        do
+        	# how many seconds each module updates
+                [ $((sec % 15)) -eq 0 ] && update_memory   	
+		[ $((sec % 15)) -eq 0 ] && update_cpu 
+        	[ $((sec % 30 )) -eq 0 ] && update_time
+        
+        	# how often the display updates
+        	[ $((sec % 5 )) -eq 0 ] && display
+        
+        	sec=$((sec + 1))
+        	sleep 1
+        done
