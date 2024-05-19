@@ -1,0 +1,38 @@
+configuration {
+  modes: [ combi, filebrowser];
+  combi-modes: [ drun, run ];
+  font: "Inter Nerd Font Regular 10";
+
+
+}
+
+@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+ 
+/* Insert theme modifications after this */
+
+element {
+  orientation: horizontal;
+  children: [ element-icon, element-text ];
+  spacing: 15px;
+}
+element-icon {
+    size: 2em;
+}
+element-text {
+    vertical-align: 0.5;
+    columns: 2;
+}
+
+listview {
+columns: 2;
+}
+
+window {
+location:	 north;
+anchor:		north;
+height:		 35%;
+width:		 15%;
+orientation:     horizontal;
+}
+
+
