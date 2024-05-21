@@ -34,3 +34,5 @@ eval "$(zoxide init bash)"
 
 [[ -f /usr/share/bash-prexec ]] && source /usr/share/bash-prexec
 [[ "$(command -v atuin)" ]] && eval "$(atuin init bash)"
+
+/usr/bin/fastfetch --logo /home/mark/bluefin.png -c /usr/share/ublue-os/ublue-os.jsonc
