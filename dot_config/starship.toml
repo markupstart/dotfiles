@@ -68,6 +68,9 @@ Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
 
+[container]
+style = "blue"
+
 [username]
 show_always = true
 style_user = "bg:color_orange fg:color_fg0"
