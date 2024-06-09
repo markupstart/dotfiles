@@ -36,3 +36,4 @@ eval "$(zoxide init bash)"
 [[ "$(command -v atuin)" ]] && eval "$(atuin init bash)"
 
 /usr/bin/fastfetch --logo /home/mark/bluefin.png -c /usr/share/ublue-os/ublue-os.jsonc
+source /usr/share/fzf/shell/key-bindings.bash
