@@ -7,7 +7,7 @@ set fish_greeting "Welcome, Mark"
 abbr -a -- ls 'eza --icons -F -H --group-directories-first --git -1'
 abbr -a -- la 'eza --icons -F -H -a --group-directories-first --git -1'
 abbr -a -- ll 'eza --icons -F -H -a -l --group-directories-first --git'
-abbr -a -- clr 'clear && fastfetch'
+abbr -a -- clr 'clear && /usr/bin/fastfetch --logo /usr/share/ublue-os/bluefin-logos/symbols/dolly'
 
 function starship_transient_rprompt_func
   starship module time
